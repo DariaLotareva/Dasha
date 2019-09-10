@@ -26,7 +26,14 @@
 #        print(sum())
 
 
+def read():
+    t=open('calculator.txt', mode='rt')
+    lines = t.readlines()
+    t.close()
+    print(lines)
+    return t
 
+read()
 
 
 while True:
@@ -40,12 +47,8 @@ while True:
         d1 = str(d)
         x1=str(x)
         y1=str(y)
-        f.write(x1)
-        f.write('+')
-        f.write(y1)
-        f.write('=')
-        f.write(d1)
-        f.write('\n')
+        lines = [x1, '+', y1, '=', d1, '\n']
+        f.writelines(lines)
 
     elif op == '-':
         y = float(input())
@@ -54,12 +57,8 @@ while True:
         d1 = str(d)
         x1=str(x)
         y1=str(y)
-        f.write(x1)
-        f.write('-')
-        f.write(y1)
-        f.write('=')
-        f.write(d1)
-        f.write('\n')
+        lines = [x1, '-', y1, '=', d1, '\n']
+        f.writelines(lines)
 
     elif op == '*':
         y = float(input())
@@ -68,12 +67,9 @@ while True:
         d1 = str(d)
         x1=str(x)
         y1=str(y)
-        f.write(x1)
-        f.write('*')
-        f.write(y1)
-        f.write('=')
-        f.write(d1)
-        f.write('\n')
+        lines=[x1,'*',y1,'=',d1,'\n']
+        f.writelines(lines)
+
 
     elif op == '/':
         y = float(input())
@@ -82,12 +78,8 @@ while True:
         d1 = str(d)
         x1=str(x)
         y1=str(y)
-        f.write(x1)
-        f.write('/')
-        f.write(y1)
-        f.write('=')
-        f.write(d1)
-        f.write('\n')
+        lines = [x1, '/', y1, '=', d1, '\n']
+        f.writelines(lines)
 
     elif op == '**':
         y = float(input())
@@ -96,10 +88,6 @@ while True:
         d1 = str(d)
         x1=str(x)
         y1=str(y)
-        f.write(x1)
-        f.write('**')
-        f.write(y1)
-        f.write('=')
-        f.write(d1)
-        f.write('\n')
+        lines = [x1, '**', y1, '=', d1, '\n']
+        f.writelines(lines)
 
