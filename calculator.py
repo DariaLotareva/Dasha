@@ -39,35 +39,38 @@ def exit():
 
 
 print('please text (count), (show_history) or (exit)')
-while True:
-    a = input().split()
-    f = open('calculator.txt', mode='at')
-    if a[0]=='show_history':
-        show_history()
-    if a[0] == 'exit':
-        exit()
-    if a[0]=='count':
+# while True:
+#     a = input().split()
+#     f = open('calculator.txt', mode='at')
+a = input().split()
+if a[0]=='show_history':
+    show_history()
+elif a[0] == 'exit':
+    exit()
+elif a[0]=='count':
+    while True:
+        f = open('calculator.txt', mode='at')
         x = float(input())
         op = input()
         if op == '+':
-            y = float(input())
-            d=x+y
-            print(d)
-            d1 = str(d)
-            x1=str(x)
-            y1=str(y)
-            lines = [x1, '+', y1, '=', d1, '\n']
-            f.writelines(lines)
+             y = float(input())
+             d=x+y
+             print(d)
+             d1 = str(d)
+             x1=str(x)
+             y1=str(y)
+             lines = [x1, '+', y1, '=', d1, '\n']
+             f.writelines(lines)
 
         elif op == '-':
-            y = float(input())
-            d = x - y
-            print(d)
-            d1 = str(d)
-            x1=str(x)
-            y1=str(y)
-            lines = [x1, '-', y1, '=', d1, '\n']
-            f.writelines(lines)
+             y = float(input())
+             d = x - y
+             print(d)
+             d1 = str(d)
+             x1=str(x)
+             y1=str(y)
+             lines = [x1, '-', y1, '=', d1, '\n']
+             f.writelines(lines)
 
         elif op == '*':
             y = float(input())
